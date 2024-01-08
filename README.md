@@ -1,1 +1,5 @@
-# [https://resend.dev/](Resend): Utilizando com Identity
+# Resend: Utilizando com Identity
+
+
+## Blog - Post
+- https://tribodoci.net/

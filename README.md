@@ -1,4 +1,4 @@
-# Resend: Utilizando com Identity
+# Resend: Utilizando com ASP.NET Core Identity
 
 
 ## Blog - Post

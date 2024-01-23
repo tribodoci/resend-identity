@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ResendIdentity.WebApp.Components;
 using ResendIdentity.WebApp.Components.Account;
 using ResendIdentity.WebApp.Data;
+using ResendIndentity.WebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +34,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddSignInManager()
     .AddDefaultTokenProviders();
 
-builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+builder.Services.AddSingleton<IEmailSender<ApplicationUser>, ResendEmailSenderService>();
 
 var app = builder.Build();
 

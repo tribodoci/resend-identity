@@ -8,13 +8,12 @@ namespace ResendIndentity.WebApp.Services;
 public class ResendEmailSenderService(
     ILogger<ResendEmailSenderService> logger,
     IHttpClientFactory httpClientFactory,
-    string apiKey,
-    string apiUrl) : IEmailSender<ApplicationUser>
+    IConfiguration configuration) : IEmailSender<ApplicationUser>
 {
     private readonly ILogger<ResendEmailSenderService> _logger = logger;
     private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
-    private readonly required string _apiKey = apiKey;
-    private readonly string _apiUrl = apiUrl;
+    private readonly string _apiKey = configuration.GetSection("Resend")["ApiKey"] ?? throw new Exception("Resend ApiKey Não configurado");
+    private readonly string _apiUrl = configuration.GetSection("Resend")["ApiUrl"] ?? throw new Exception("Resend ApiUrl Não configurado");
 
     public Task SendConfirmationLinkAsync(ApplicationUser user, string email, string confirmationLink)
     {

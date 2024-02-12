@@ -33,8 +33,13 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
-// TODO: Init Config
+
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, ResendEmailSenderService>();
+
+builder.Services.AddHttpClient("ResendClient", client =>
+{    
+    client.Timeout = TimeSpan.FromSeconds(600);
+});
 
 var app = builder.Build();
 

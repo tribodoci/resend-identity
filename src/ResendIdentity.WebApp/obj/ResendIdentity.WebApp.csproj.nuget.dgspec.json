@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/home/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj": {}
+    "/Users/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj": {}
   },
   "projects": {
-    "/home/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj": {
+    "/Users/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj",
+        "projectUniqueName": "/Users/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj",
         "projectName": "ResendIdentity.WebApp",
-        "projectPath": "/home/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj",
-        "packagesPath": "/home/relson/.nuget/packages/",
-        "outputPath": "/home/relson/code/resend-identity/src/ResendIdentity.WebApp/obj/",
+        "projectPath": "/Users/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj",
+        "packagesPath": "/Users/relson/.nuget/packages/",
+        "outputPath": "/Users/relson/code/resend-identity/src/ResendIdentity.WebApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/relson/.nuget/NuGet/NuGet.Config"
+          "/Users/relson/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,6 +54,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -74,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

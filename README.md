@@ -15,7 +15,7 @@ dotnet new sln -n ResendIdentity
 > Agora o projeto, vamos utilizar o template blazor com o Identity
 
 ```shell
-dotnet new blazor -n ResendIdentity.WebApp
+dotnet new blazor -n ResendIdentity.WebApp --auth Individual
 ```
 > Projeto criado é só adiciona-lo a Solução, pode ser especificado a pasta do projeto ou o ```.csproj```, no exemplo que segue especificamos apenas o nome da pasta onde está localizado o projeto.
 ```shell

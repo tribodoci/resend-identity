@@ -17,7 +17,7 @@ dotnet new sln -n ResendIdentity
 ```shell
 dotnet new blazor -n ResendIdentity.WebApp --auth Individual
 ```
-> Projeto criado é só adiciona-lo a Solução, pode ser especificado a pasta do projeto ou o ```.csproj```, no exemplo que segue especificamos apenas o nome da pasta onde está localizado o projeto.
+> Projeto criado é só adiciona-lo a Solução, pode ser especificado a pasta do projeto ou o ```.csproj```, no exemplo que segue especificamos apenas o nome da pasta.
 ```shell
 dotnet sln add ResendIdentity.WebApp
 ```

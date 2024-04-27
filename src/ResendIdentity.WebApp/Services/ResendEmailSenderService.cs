@@ -15,19 +15,79 @@ public class ResendEmailSenderService(
     private readonly string _apiKey = configuration.GetSection("Resend")["ApiKey"] ?? throw new Exception("Resend ApiKey Não configurado");
     private readonly string _apiUrl = configuration.GetSection("Resend")["ApiUrl"] ?? throw new Exception("Resend ApiUrl Não configurado");
 
-    public Task SendConfirmationLinkAsync(ApplicationUser user, string email, string confirmationLink)
+    public async Task SendConfirmationLinkAsync(ApplicationUser user, string email, string confirmationLink)
     {
-        throw new NotImplementedException();
+        if (_logger.IsEnabled(LogLevel.Information))
+        {
+            _logger.LogInformation("SendConfirmationLinkAsync {email}", email);
+        }
+        try
+        {
+            await SendEmailAsync(new SendEmailRequest()
+            {
+                Subject = "Confirmação de e-mail da conta",
+                To = email,
+                Html = $"Olá {user.UserName} Click <a href=\"{confirmationLink}\">aqui</a> para confirmar a sua conta ou cole no seu navegador link a seguir para  confirmar a sua conta <pre>{confirmationLink}</pre>"
+            });
+        }
+        catch (Exception ex)
+        {
+            if (_logger.IsEnabled(LogLevel.Error))
+            {
+                _logger.LogError("SendConfirmationLinkAsync {ex} - {stackTracke}", email, ex.StackTrace);
+            }
+            throw;
+        }
     }
 
-    public Task SendPasswordResetCodeAsync(ApplicationUser user, string email, string resetCode)
+    public async Task SendPasswordResetCodeAsync(ApplicationUser user, string email, string resetCode)
     {
-        throw new NotImplementedException();
+        if (_logger.IsEnabled(LogLevel.Information))
+        {
+            _logger.LogInformation("SendPasswordResetCodeAsync {username}  {email}", user.UserName, email);
+        }
+        try
+        {
+            await SendEmailAsync(new SendEmailRequest()
+            {
+                Subject = "Codigo Solicitação para reset de senha",
+                To = email,
+                Html = $"Olá {user.UserName}, Código para resetar a sua senha <pre>{resetCode}</pre>"
+            });
+        }
+        catch (Exception ex)
+        {
+            if (_logger.IsEnabled(LogLevel.Error))
+            {
+                _logger.LogError("SendPasswordResetCodeAsync {ex} - {stackTracke}", email, ex.StackTrace);
+            }
+            throw;
+        }
     }
 
-    public Task SendPasswordResetLinkAsync(ApplicationUser user, string email, string resetLink)
+    public async Task SendPasswordResetLinkAsync(ApplicationUser user, string email, string resetLink)
     {
-        throw new NotImplementedException();
+        if (_logger.IsEnabled(LogLevel.Information))
+        {
+            _logger.LogInformation("SendPasswordResetLinkAsync {email}", email);
+        }
+        try
+        {
+            await SendEmailAsync(new SendEmailRequest()
+            {
+                Subject = "Reset de senha",
+                To = email,
+                Html = $"Olá {user.UserName}, Click <a href=\"{resetLink}\">aqui</a> para resetar a sua senha ou cole no seu navegador o link a seguir: <pre>{resetLink}</pre>"
+            });
+        }
+        catch (Exception ex)
+        {
+            if (_logger.IsEnabled(LogLevel.Error))
+            {
+                _logger.LogError("SendPasswordResetLinkAsync {ex} - {stackTracke}", email, ex.StackTrace);
+            }
+            throw;
+        }
     }
 
     private async Task SendEmailAsync(SendEmailRequest emailRequest)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UB8z+QfAk40L/ccopjB8yKB5inDPXhDuIHY9TfvYphJI/kbfJfHTMyXjcFZGXGMILvqrdxU4YZQtPnPWZlAK4A==",
+  "dgSpecHash": "iouu67AFUPW3bLyVP/ZXBHNR9mNcJEl6yu4ewawxkWjSHP6mz6LqSMmFyNn8aMj737+2Ufw5/UFU+3SpjO4AwA==",
   "success": true,
   "projectFilePath": "/home/relson/code/resend-identity/src/ResendIdentity.WebApp/ResendIdentity.WebApp.csproj",
   "expectedPackageFiles": [

@@ -21,5 +21,7 @@ dotnet new blazor -n ResendIdentity.WebApp --auth Individual
 ```shell
 dotnet sln add ResendIdentity.WebApp
 ```
+## Cuidados ao utilizar o ```Polly```
+...
 ## Blog - Post
 - https://tribodoci.net/

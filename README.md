@@ -25,3 +25,6 @@ dotnet sln add ResendIdentity.WebApp
 ...
 ## Blog - Post
 - https://tribodoci.net/
+
+## A Fazer
+- ...
